@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/songs.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            {% for song in songs %}
+            <div class="card">
+                <img src="{{song.cover_art}}" alt="{{song.title}} Cover Art">
+                <h1>{{song.title}}</h1>
+                <a target="_blank" href="{{song.link}}">Spotify</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
